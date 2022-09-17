@@ -1,7 +1,20 @@
-
-
 class Matrix:
-    def __init__(self):
+    cols = 0
+    rows = 0
+    matrix = []
+
+    def __init__(self, cols, rows):
+        self.cols = cols
+        self.rows = rows
+
+        self.init()
+
+    def init(self):
+        self.matrix = [
+            ['0'] * self.rows
+        ] * self.cols
+
+    def go(self):
         pass
 
     def __str__(self):
