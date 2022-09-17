@@ -1,3 +1,6 @@
+import terminal as TPut
+
+
 class Matrix:
     cols = 0
     rows = 0
@@ -10,15 +13,20 @@ class Matrix:
         self.init()
 
     def init(self):
-        self.matrix = [
-            ['0'] * self.rows
-        ] * self.cols
+        TPut.clear()
+        self.matrix = [[''] * self.cols] * self.rows
 
     def go(self):
-        pass
+        print(self)
 
     def __str__(self):
-        print('matrix')
+        out = ''
+        for rows in self.matrix:
+            out += "\n"
+            for line in rows:
+                out += line
+
+        return out
 
 
 if __name__ == '__main__':

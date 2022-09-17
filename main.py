@@ -1,19 +1,21 @@
 import matrix as mt
-from os import popen
+import terminal as TPut
 
 
 def get_config_data():
-    cols = popen('tput cols', 'r').read()
-    rows = popen('tput lines', 'r').read()
+    cols = TPut.cols()
+    rows = TPut.rows()
 
     return {
-        'cols': cols,
-        'rows': rows
+        'cols': int(cols),
+        'rows': int(rows)
     }
+
+
 def go_matrix():
     config = get_config_data()
 
-    matrix = mt.Matrix(rows=config.rows, cols=config.cols)
+    matrix = mt.Matrix(rows=config['rows'], cols=config['cols'])
 
     matrix.go()
 
