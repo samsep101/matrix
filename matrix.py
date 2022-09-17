@@ -25,8 +25,9 @@ class Matrix:
             sleep(0.3)
             TPut.clear()
             self.matrix.pop(self.rows - 1)
-            self.matrix.insert(0, [char.Char()] * self.cols)
+            self.matrix.insert(0, [char.Char() for i in range(0, self.cols)])
             print(self)
+
 
     def __str__(self):
         out = ''
