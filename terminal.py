@@ -15,6 +15,6 @@ def rows():
 
 
 def clear():
-    return system('reset')
+    return system('tput reset')
 
 

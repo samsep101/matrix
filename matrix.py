@@ -1,4 +1,6 @@
 import terminal as TPut
+from time import sleep
+import char
 
 
 class Matrix:
@@ -13,18 +15,25 @@ class Matrix:
         self.init()
 
     def init(self):
-        TPut.clear()
         self.matrix = [[''] * self.cols] * self.rows
 
     def go(self):
-        print(self)
+        self.loop()
+
+    def loop(self):
+        while True:
+            sleep(0.3)
+            TPut.clear()
+            self.matrix.pop(self.rows - 1)
+            self.matrix.insert(0, [char.Char()] * self.cols)
+            print(self)
 
     def __str__(self):
         out = ''
         for rows in self.matrix:
             out += "\n"
             for line in rows:
-                out += line
+                out += str(line)
 
         return out
 
