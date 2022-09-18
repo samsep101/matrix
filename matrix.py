@@ -25,7 +25,7 @@ class Matrix:
 
     def loop(self):
         while True:
-            sleep(0.02)
+            sleep(0.1)
 
             if self.notActivedSkakes:
                 choice = random.randint(0, self.notActivedSkakes)
@@ -41,7 +41,7 @@ class Matrix:
 
     def __str__(self):
         out = ''
-        for row in range( self.rows):
+        for row in range(self.rows -2):
             for col in range(self.cols):
                 # print()
                 # print(len(str(self.matrix[col])))

@@ -5,6 +5,7 @@ class Snake:
     active = 0
     started = 0
     width = 0
+    maxWidth = 10
     size = 0
     fiiledSize = 0
 
@@ -21,7 +22,7 @@ class Snake:
             return
 
         if self.active:
-            if self.width == 8:
+            if self.width == self.maxWidth:
                 if self.fiiledSize == self.size:
                     self.width = 0
                     self.active = 0
@@ -41,6 +42,7 @@ class Snake:
 
                 self.fiiledSize -= 1
             else:
+                self.maxWidth = random.randint(7, self.size - 2)
                 self.active = 1
 
     def rand(self):
